@@ -18,7 +18,6 @@ github_blueprint = make_github_blueprint(client_id=env_to_var("GITHUB_CLIENT_ID"
 
 app.register_blueprint(github_blueprint, url_prefix="/login")
 
-ALLOWED_EXTENSIONS = {'pdf'}
 
 @app.route("/")
 def index():
@@ -42,9 +41,6 @@ def login():
         return redirect(url_for("github.login"))
 
     return redirect(url_for("index"))
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -144,7 +140,6 @@ def add_date():
     cprint(f'Received date: {date}', 'grey', attrs=['bold'])
 
     return jsonify({'date': date})
-
 
 
 @app.route('/show_data')

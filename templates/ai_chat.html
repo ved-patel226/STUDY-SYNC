@@ -8,7 +8,7 @@
     <form action="/ai-chat" method="POST" class="chat-form">
         <input type="hidden" name="path" value="{{ path }}">
         <input type="hidden" name="full-path" value="{{ full_path }}">
-        
+    
         <div class="text">
             <label><h1>Ask us any question!</h1></label>
             <label><h1>Or, generate questions!</h1></label>    
@@ -17,7 +17,6 @@
         <input type="text" name="user-input" placeholder="Type your message here" class="form-input">
         
         <button type="submit" class="btn load-show">Send</button>
-
 
         {% if ai_msg != '' %}
             <div class="ai-msg">
