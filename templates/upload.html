@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block nav %}
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+<script src="{{ url_for('static', filename='js/input_submit.js') }}"></script>
+
+<div class="upload-container">
+    <h1>Upload File</h1>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" required style="display: none;">
+        <input type="hidden" name="date_difference" value="{{ date_difference }}">
+        <label for="file" class="custom-file-upload">
+            Choose File <br>
+            Or Drag and Drop
+        </label>
+    </form>
+</div>
+
+{% endblock %}

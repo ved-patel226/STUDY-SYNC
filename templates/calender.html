@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/calender.css') }}">
+<script src="{{ url_for('static', filename='js/calender.js') }}"></script>
+
+<div class="calendar-container">
+    <h1>Go ahead and select the date of your test!</h1>
+    <div id='calendar'></div>
+</div>
+{% endblock %}

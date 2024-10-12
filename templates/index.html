@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero">
+    <div class="text">
+        <h1>Study more efficiently with Study Sync</h1>
+        <p>"Decades of research have demonstrated that spacing out study sessions over a longer period of time improves long-term memory. In other words, if you have 12 hours to spend on a subject, it's better to study it for three hours each week for four weeks than to cram all 12 hours into week four."</p>
+        <a href="https://www.apa.org/gradpsych/2011/11/study-smart#:~:text=Decades%20of%20research%20have%20demonstrated,12%20hours%20into%20week%20four."
+        class="cite">- American Psychological Association (APA)</a>
+    </div>
+    <img src="{{ url_for('static', filename='imgs/engineer.svg') }}" alt="Hero Image">
+</div>
+<hr>
+
+<h1 class="ttl">How it works</h1>
+<div class="features">
+    <div class="feature">
+        <img src="{{ url_for('static', filename='imgs/paper-plane.svg') }}" alt="">
+        <div class="text-box">
+            <h1 class="num">1.</h1>
+            <div class="text">
+                <h1>Enter your test date</h1>
+            </div>
+        </div>
+    </div>
+    <div class="feature">
+        <img src="{{ url_for('static', filename='imgs/laptop.svg') }}" alt="">
+        <div class="text-box">
+            <h1 class="num">2.</h1>
+            <div class="text">
+                <h1>Upload your notes</h1>
+            </div>
+        </div>
+    </div>
+    <div class="feature">
+        <img src="{{ url_for('static', filename='imgs/hourglass.svg') }}" alt="">
+        <div class="text-box">
+            <h1 class="num">3.</h1>
+            <div class="text">
+                <h1>Wait for the magic</h1>
+            </div>
+        </div>
+    </div>
+    <div class="feature">
+        <img src="{{ url_for('static', filename='imgs/digital-nomad.svg') }}" alt="">
+        <div class="text-box">
+            <h1 class="num">4.</h1>
+            <div class="text">
+                <h1>Enjoy a personalized study plan</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="feature-side">
+    <div class="text">
+        <h1>Progress Checking</h1>
+        <p>StudySync ensures that the users stay on task by breaking down tasks into easy daily portions. By making sure users complete a little bit of each task every day, it builds consistency and prevents last-minute cramming. StudySync provides small tasks to do everyday which keeps students motivated and focused on the goals they set. StudySync emphasizes on the idea that small steps lead to giant leaps.</p>
+        <a href="{{ url_for('login') }}" class="btn">Get started</a>
+    </div>
+    <img src="{{ url_for('static', filename='imgs/ai.svg') }}" alt="Feature Image">
+</div>
+
+<hr>
+
+<div class="feature-side">
+    <img src="{{ url_for('static', filename='imgs/genius.svg') }}" alt="Feature Image">
+
+    <div class="text">
+        <h1>Blazing Fast!</h1>
+        <p>Because of the quick speed in which our software is built for, students can access their learning resources and progress checking easily and instantly. Users can study for assignments with ease because of a simple layout and fast loading times. This makes StudySync less time consuming and difficult, but also more enjoyable throughout. We believe that this is useful, especially for students because they are able to make the most of their study time and focus on  effectively meeting their academic goals.</p>
+        <a href="{{ url_for('login') }}" class="btn">Get started</a>
+    </div>
+</div>
+
+<div class="feature-side">
+    <div class="text">
+        <h1>Blazing Fast!</h1>
+        <p>Because of the quick speed in which our software is built for, students can access their learning resources and progress checking easily and instantly. Users can study for assignments with ease because of a simple layout and fast loading times. This makes StudySync less time consuming and difficult, but also more enjoyable throughout. We believe that this is useful, especially for students because they are able to make the most of their study time and focus on  effectively meeting their academic goals.</p>
+        <a href="{{ url_for('login') }}" class="btn">Get started</a>
+    </div>
+    <img src="{{ url_for('static', filename='imgs/genius.svg') }}" alt="Feature Image">
+
+</div>
+
+
+{% endblock %}

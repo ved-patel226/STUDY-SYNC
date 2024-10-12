@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/highlight.js') }}"></script>
+
+<div class="pdf-container">
+    {% for filename, path, date in files %}
+    <div class="pdf">
+        {% set filename = filename.split(".")  %}
+        {% set part = filename[1].replace('_', ' ').replace('pdf', '').title() %}
+
+        <div class="text">
+            <h1>{{filename[0]}} -<span>{{ part }}</span></h1>
+            <h2>{{ datetime.fromisoformat(date).strftime("%B %d, %Y") }}</h2>
+            <a class="btn" href="/ai-chat/?path={{ path.split('/parts')[0] }}&full-path={{ path }}">Open AI chat</a>
+        </div>
+
+        <iframe id="pdf-frame" src="{{ path }}" width="100%" height="600"></iframe>
+
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

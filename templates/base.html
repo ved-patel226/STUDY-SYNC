@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/bouncy.js"></script>
+    <script src="{{ url_for('static', filename='js/load-show.js') }}"></script>
+    <title>Study Sync</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="nav">
+                <a href="/" class="logo">
+                    <img src="{{ url_for('static', filename='imgs/reload.png') }}" alt="Study Sync Logo">
+                    <h1>Study Sync</h1>         
+                </a>
+
+                <div class="links">
+                    <a class="active" href="{{ url_for('index') }}">Home</a>
+                    {% block nav %}
+                    {% endblock %}
+
+                    {% if is_authenticated == False %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                    {% else %}
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+
+                </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </div>
+    <footer><p>Made by <span><a href="https://github.com/ved-patel226">Ved Patel</a></span> with help by <span><a href="https://github.com/krish-harish821">Krish Harish</a></span> and Arsh Bahala. Icons by <span><a href="https://popsy.co/illustrations">https://popsy.co/</a></span></p></footer>
+    
+
+    <l-bouncy
+      size="45"
+      speed="1.75"
+      color="#6A9AB0" 
+      style="display:none;"
+    ></l-bouncy>
+    <div id="screen" style="display:none;"></div>
+</body>
+</html>

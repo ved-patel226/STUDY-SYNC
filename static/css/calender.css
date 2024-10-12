@@ -1,0 +1,51 @@
+#calendar {
+    width: 1000px;
+    border: 5px solid var(--fourth-color);
+    margin: 0 auto;
+}
+
+.fc {
+    background-color: #EAD8B1;
+}
+
+.fc-toolbar {
+    background-color: #6A9AB0;
+    color: #fff;
+}
+
+.fc-title {
+    color: #3A6D8C;
+}
+
+
+.fc-day {
+    background-color: #f9f9f9;
+}
+
+.hover-highlight {
+    background-color: var(--first-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.fc-event {
+    background-color: #3A6D8C;
+    color: #fff;
+}
+
+.fc-event:hover {
+    background-color: #001F3F
+}
+
+.fc-past {
+    background-color: #f0f0f0;
+    pointer-events: none;
+    color: gray;
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
